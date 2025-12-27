@@ -25,23 +25,36 @@ namespace Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public Task<List<Gasto>> GetAllAsync()
+        public async Task DeleteAsync(Gasto gasto)
+        {
+            _context.Gastos.Remove(gasto);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Gasto>> GetAllAsync()
         {
             // .AsNoTracking() es un truco PRO
             // Hace que la consulta sea más rápida si solo vamos a leer datos (no modificarlos).
             // .Include(g => g.Empleado) es un "JOIN" de SQL. Trae los datos del dueño del gasto también.
 
-            return _context.Gastos
+            return await _context.Gastos
                 .Include(g => g.Empleado)
                 .AsNoTracking()
                 .ToListAsync();
         }
 
-        public Task<Gasto?> GetByIdAsync(Guid id)
+        public async Task<Gasto?> GetByIdAsync(Guid id)
         {
-            return _context.Gastos
+            return await _context.Gastos
                 .Include(g => g.Empleado)
                 .FirstOrDefaultAsync(g => g.Id == id);
         }
+
+        public async Task UpdateAsync(Gasto gasto)
+        {
+            _context.Entry(gasto).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

@@ -19,7 +19,7 @@ namespace API.Controllers
         // Solo sabemos que cumple con IGastoRepository.
 
         public GastosController(IGastoRepository repositroy)
-        { 
+        {
             _repositroy = repositroy;
         }
 
@@ -54,17 +54,58 @@ namespace API.Controllers
                 return BadRequest("El monto debe ser mayor a 0");
 
             var nuevoGasto = new Gasto(
-                
+
                 gastoDTO.Fecha,
                 gastoDTO.Descripcion,
                 gastoDTO.Monto,
                 gastoDTO.EmpleadoId
-                
+
                 );
 
             await _repositroy.AddAsync(nuevoGasto);
 
-            return Ok(new { message = $"El gasto {nuevoGasto.Id } se ha creado con exito"  });
+            return Ok(new { message = $"El gasto {nuevoGasto.Id} se ha creado con exito" });
         }
+
+        // PUT: api/gastos/{id}
+        [HttpPut("{id}")]
+
+        public async Task<IActionResult> Actualizar(Guid id, [FromBody] CreateGastoDTO gastoDTO)
+        {
+            var gastoExistente = await _repositroy.GetByIdAsync(id);
+
+            if (gastoExistente == null)
+            {
+                return NotFound($"No se econtro el gasto con el {id}");
+            }
+
+            gastoExistente.Fecha = gastoDTO.Fecha;
+            gastoExistente.Monto = gastoDTO.Monto;
+            gastoExistente.Descripcion = gastoDTO.Descripcion;
+            gastoExistente.EmpleadoId = gastoDTO.EmpleadoId;
+
+            await _repositroy.UpdateAsync(gastoExistente);
+
+            return NoContent();
+
+        }
+
+        //Delete: api/gastos/{id}
+        [HttpDelete("{id}")]
+
+        public async Task<IActionResult> Eliminar(Guid id)
+        {
+            var gastoDelete = await _repositroy.GetByIdAsync(id);
+
+            if (gastoDelete == null)
+            {
+                return NotFound($"No existe el Gasto con el id {id} para eliminarlo");
+            }
+
+            await _repositroy.DeleteAsync(gastoDelete);
+
+            return NoContent(); // 204 No content
+        }
+
     }
 }

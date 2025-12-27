@@ -11,7 +11,11 @@ namespace Application.Interfaces
     {
         Task AddAsync(Gasto gasto);
 
-        Task<List<Gasto>> GetAllAsync();
+        Task UpdateAsync(Gasto gasto);
+
+        Task DeleteAsync(Gasto gasto);
+
+        Task<IEnumerable<Gasto>> GetAllAsync();
 
         Task<Gasto?> GetByIdAsync(Guid id);
 
