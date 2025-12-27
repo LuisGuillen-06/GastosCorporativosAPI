@@ -17,6 +17,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Es el ciclo de vida perfecto para bases de datos
 
 builder.Services.AddScoped<IGastoRepository,GastoRepository>();
+builder.Services.AddScoped<IEmpleadoRepository,EmpleadoRepository>();
 
 builder.Services.AddControllers();
 

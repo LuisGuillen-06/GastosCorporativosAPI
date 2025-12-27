@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    // [ApiController]: Le dice a .NET que esto es una API (mejora los errores y validaciones).
-    // [Route]: Define la URL. Será "tudominio.com/api/gastos"
+    // [ApiController]: Le dice a .NET que esto es una API, mejora los errores y validaciones
+    // [Route]: Define la URL
 
     [ApiController]
     [Route("api/[controller]")]
