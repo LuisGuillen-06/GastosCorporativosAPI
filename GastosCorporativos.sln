@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{78C3FFBA-3609-44C9-B7B0-F9C36A2E284D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GastosCorporativos.Tests", "GastosCorporativos.Tests\GastosCorporativos.Tests.csproj", "{086BB6D0-32E6-421A-90BF-C007BCAA525F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{78C3FFBA-3609-44C9-B7B0-F9C36A2E284D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78C3FFBA-3609-44C9-B7B0-F9C36A2E284D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78C3FFBA-3609-44C9-B7B0-F9C36A2E284D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{086BB6D0-32E6-421A-90BF-C007BCAA525F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086BB6D0-32E6-421A-90BF-C007BCAA525F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086BB6D0-32E6-421A-90BF-C007BCAA525F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086BB6D0-32E6-421A-90BF-C007BCAA525F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
