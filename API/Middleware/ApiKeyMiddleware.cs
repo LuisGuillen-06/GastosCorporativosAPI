@@ -16,6 +16,12 @@ namespace API.Middleware
         }
         public async Task InvokeAsync(HttpContext context)
         {
+            var path = context.Request.Path.Value?.ToLower();
+            if (path != null && (path.StartsWith("/scalar") || path.StartsWith("/openapi") || path.StartsWith("/swagger")))
+            {
+                await _next(context);
+                return;
+            }
             // Buscamos el header
             if (!context.Request.Headers.TryGetValue(APIKEYNAME, out var extractedApiKey))
             {

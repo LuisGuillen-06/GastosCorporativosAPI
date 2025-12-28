@@ -2,6 +2,7 @@
 using Application.Interfaces;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 namespace API.Controllers
 {
@@ -18,6 +19,10 @@ namespace API.Controllers
 
 
         [HttpGet]
+        [EndpointSummary("Obtiene la lista de todos los empleados")]
+        [EndpointDescription("Este endpoint devuelve todos los empleados activos en la base de datos. Requiere API Key.")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<IActionResult> ObtenerTodos()
         {
             var empleados = await _repository.GetAllAsync();
@@ -27,7 +32,11 @@ namespace API.Controllers
 
 
         [HttpPost]
-
+        [EndpointSummary("Crea un nuevo empleado")]
+        [EndpointDescription("Valida los datos y guarda un nuevo empleado. El Email debe ser único.")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<IActionResult> Crear([FromBody] CreateEmpleadoDTO empleadoDTO)
         {
       
