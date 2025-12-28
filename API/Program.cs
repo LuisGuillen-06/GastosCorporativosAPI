@@ -43,14 +43,14 @@ builder.Services.AddValidatorsFromAssemblyContaining<EmpleadoValidator>();
 
 builder.Services.AddControllers();
 
-// PASO A: Agregar la política de CORS (Permitir todo)
+//Agregar la política de CORS (Permitir todo)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.AllowAnyOrigin()   // Acepta peticiones de cualquier web
-              .AllowAnyMethod()   // Acepta GET, POST, PUT, DELETE
-              .AllowAnyHeader();  // Acepta cualquier tipo de contenido
+        policy.AllowAnyOrigin()   
+              .AllowAnyMethod()  
+              .AllowAnyHeader();  
     });
 });
 

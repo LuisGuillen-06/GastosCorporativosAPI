@@ -85,7 +85,7 @@ namespace API.Controllers
 
             await _repository.DeleteAsync(empleadoDelte);
 
-            return NoContent(); // 204 No content
+            return NoContent();
         }
     }
 }

@@ -12,9 +12,6 @@ namespace Application.DTOs
         public string Nombre { get; set; } = string.Empty;
 
         public string Apellido { get; set; } = string.Empty;
-
-        [Required(ErrorMessage = "Debes Ingresar el Email")]
-        [EmailAddress(ErrorMessage ="El formato del correo no es valido")]
         public string Email { get; set; } = string.Empty;
     }
 }

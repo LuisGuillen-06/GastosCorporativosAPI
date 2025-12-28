@@ -50,9 +50,6 @@ namespace API.Controllers
 
         public async Task<IActionResult> Crear([FromBody] CreateGastoDTO gastoDTO)
         {
-            if (gastoDTO.Monto <= 0)
-                return BadRequest("El monto debe ser mayor a 0");
-
             var nuevoGasto = new Gasto(
 
                 gastoDTO.Fecha,
