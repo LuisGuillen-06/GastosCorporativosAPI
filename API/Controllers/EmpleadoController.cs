@@ -2,7 +2,6 @@
 using Application.Interfaces;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
 
 namespace API.Controllers
 {
@@ -39,7 +38,7 @@ namespace API.Controllers
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<IActionResult> Crear([FromBody] CreateEmpleadoDTO empleadoDTO)
         {
-      
+
             var nuevoEmpleado = new Empleado(
 
                 empleadoDTO.Nombre,

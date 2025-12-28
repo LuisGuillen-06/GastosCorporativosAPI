@@ -9,10 +9,7 @@ namespace Application.DTOs
 {
     public class CreateEmpleadoDTO
     {
-        [Required (ErrorMessage ="Debes Ingresar el Nombre")]
         public string Nombre { get; set; } = string.Empty;
-
-        [Required(ErrorMessage = "Debes Ingresar el Apellido")]
 
         public string Apellido { get; set; } = string.Empty;
 

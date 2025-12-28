@@ -4,6 +4,9 @@ using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 using API.Middleware;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using API.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +22,15 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddScoped<IGastoRepository,GastoRepository>();
 builder.Services.AddScoped<IEmpleadoRepository,EmpleadoRepository>();
+
+//Activar la validación automática en los controladores
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+
+
+//Registrar todos los validadores que esten en este proyecto
+builder.Services.AddValidatorsFromAssemblyContaining<GastoValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<EmpleadoValidator>();
 
 builder.Services.AddControllers();
 
