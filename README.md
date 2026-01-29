@@ -1,47 +1,50 @@
 #  GastosCorporativos API (.NET 9 + Azure)
 
-API RESTful robusta y escalable dise馻da para la gesti髇 centralizada de gastos corporativos. Desarrollada con las 鷏timas tecnolog韆s de Microsoft y desplegada en la nube.
+API RESTful robusta y escalable dise帽ada para la gesti贸n centralizada de gastos corporativos. Desarrollada con las 煤ltimas tecnolog铆as de Microsoft y desplegada en la nube.
 
 ![Status](https://img.shields.io/badge/Status-Active-success)
 ![.NET](https://img.shields.io/badge/.NET-9.0-512BD4?logo=dotnet)
 ![Azure](https://img.shields.io/badge/Azure-App%20Service-0078D4?logo=microsoftazure)
 
-##  Descripci髇 del Proyecto
-Este sistema permite a las empresas registrar, monitorear y aprobar gastos de empleados. La arquitectura sigue los principios de **Domain-Driven Design (DDD)** simplificado, asegurando un c骴igo limpio, mantenible y testeable.
+##  Descripci贸n del Proyecto
+Este sistema permite a las empresas registrar, monitorear y aprobar gastos de empleados. La arquitectura sigue los principios de **Domain-Driven Design (DDD)** simplificado, asegurando un c贸digo limpio, mantenible y testeable.
 
 ### Funcionalidades Clave
-* **Gesti髇 Completa (CRUD):** Registro de empleados y sus gastos asociados.
-* **Validaciones de Negocio:** Reglas estrictas (ej. no permitir montos negativos) implementadas con FluentValidation/L骻ica de dominio.
-* **Seguridad Personalizada:** Middleware de autenticaci髇 mediante `API-Key` en Headers.
+* **Gesti贸n Completa (CRUD):** Registro de empleados y sus gastos asociados.
+* **Validaciones de Negocio:** Reglas estrictas (ej. no permitir montos negativos) implementadas con FluentValidation/L贸gica de dominio.
+* **Seguridad Personalizada:** Middleware de autenticaci贸n mediante `API-Key` en Headers.
 * **Persistencia Eficiente:** Entity Framework Core con enfoque **Code-First** y relaciones 1:N.
 * **Cloud Native:** Despliegue automatizado en **Azure App Service** conectado a **Azure SQL Database**.
-* **Documentaci髇 Viva:** Integraci髇 con Scalar/Swagger para pruebas interactivas.
+* **Documentaci贸n Viva:** Integraci贸n con Scalar/Swagger para pruebas interactivas.
 
-## Stack Tecnol骻ico
+## Stack Tecnol贸gico
 * **Lenguaje:** C# 12
 * **Framework:** ASP.NET Core Web API (.NET 9)
-* **Base de Datos:** SQL Server (Local) / Azure SQL (Producci髇)
+* **Base de Datos:** SQL Server (Local) / Azure SQL (Producci贸n)
 * **ORM:** Entity Framework Core 9
 * **Testing:** xUnit (Pruebas Unitarias)
 * **Herramientas:** Visual Studio 2022, Postman/Scalar.
 
-## C髆o probar la API (Demo)
-El proyecto se encuentra desplegado y activo en Azure. Puedes probar los endpoints utilizando la siguiente URL base y la API Key de demostraci髇.
+## C贸mo probar la API (Demo)
+
+<img width="1918" height="977" alt="ImagenScalar" src="https://github.com/user-attachments/assets/9261108b-61dc-40cb-a27d-b694b9612316" />
+
+El proyecto se encuentra desplegado y activo en Azure. Puedes probar los endpoints utilizando la siguiente URL base y la API Key de demostraci贸n.
 
 **URL Base:** `https://gastoscorporativosapi-2025-bwesgqemdychftej.eastus2-01.azurewebsites.net/api`
-**Documentaci髇 Interactiva:** [Ver en Scalar](https://gastoscorporativosapi-2025-bwesgqemdychftej.eastus2-01.azurewebsites.net/scalar/v1)
+**Documentaci贸n Interactiva:** [Ver en Scalar](https://gastoscorporativosapi-2025-bwesgqemdychftej.eastus2-01.azurewebsites.net/scalar/v1)
 
 > **Nota:** Para probar los endpoints protegidos, necesitas configurar el Header `API-KEY`.
 
-## Configuraci髇 Local
-Si deseas ejecutar este proyecto en tu m醧uina:
+## Configuraci贸n Local
+Si deseas ejecutar este proyecto en tu m谩quina:
 
 1.  **Clonar el repositorio:**
     ```bash
     git clone [https://github.com/LuisGuillen-06/GastosCorporativosAPI.git](https://github.com/LuisGuillen-06/GastosCorporativosAPI.git)
     ```
 2.  **Configurar Base de Datos:**
-    Actualiza la cadena de conexi髇 en `appsettings.json`.
+    Actualiza la cadena de conexi贸n en `appsettings.json`.
 3.  **Aplicar Migraciones:**
     ```bash
     Update-Database
